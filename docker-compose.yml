@@ -1,0 +1,15 @@
+# Basado en el compose del README oficial
+services:
+  mitra:
+    image: ghcr.io/a11delavar/mitra:latest
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      # Zona horaria que usa Mitra para mostrar las fechas
+      TZ: 'Europe/Madrid'
+      # Descomenta cuando tengas una dirección pública
+      # MITRA_URL: 'https://mitra.tudominio.com'
+    volumes:
+      # Todo lo que guarda Mitra está en esta carpeta
+      - ~/mitra:/app/data
